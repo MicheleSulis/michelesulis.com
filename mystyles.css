@@ -1,0 +1,246 @@
+/*
+dark theme:
+https://colorhunt.co/palette/1919192d4263c84b31ecdbba
+light theme:
+https://colorhunt.co/palette/cee5d0f3f0d7f7d59c5e454b
+*/
+
+:root {
+    --bg-color: #F3F0D7;
+    --text-color: #5E454B;
+    --accent-color: #F7D59C;
+    --secondary-bg: #CEE5D0;
+    --line-color: #5E454B;
+}
+
+body.dark-mode {
+    --bg-color: #191919;
+    --text-color: #ECDBBA;
+    --accent-color: #C84B31;
+    --secondary-bg: #2D4263;
+    --line-color: #C84B31;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: var(--secondary-bg);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    font-weight: 500;
+}
+
+nav ul li:first-child {
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- HERO SECTION -> FULL SCREEN --- */
+.hero-section {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.code-style {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.comment {
+    color: #999;
+}
+
+#greeting {
+    color: var(--text-color);
+    display: inline-block;
+    min-width: 300px;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .code-style {
+        white-space: normal;
+    }
+
+    .mobile-break {
+        display: block;
+    }
+}
+
+#about {
+    padding: 80px 0;
+}
+
+.header-with-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header-with-line h2 {
+    margin: 0;
+    padding-right: 20px;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.header-with-line .line {
+    flex-grow: 1;
+    height: 3px;
+    background-color: var(--line-color);
+    border-radius: 2px;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.portrait img {
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px var(--accent-color);
+    max-width: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column-reverse;
+    }
+}
+
+footer {
+    background-color: var(--secondary-bg);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.moon {
+    display: block;
+}
+
+.sun {
+    display: none;
+}
+
+body.dark-mode .moon {
+    display: none;
+}
+
+body.dark-mode .sun {
+    display: block;
+}
+
+.social-icons svg {
+    transition: transform 0.2s;
+}
+
+.social-icons svg:hover {
+    transform: scale(1.1);
+}
+
+.social-icons svg path,
+.social-icons svg circle {
+    fill: var(--text-color);
+}
+
+.social-icons svg:nth-child(1) path {
+    fill: none;
+    stroke: var(--text-color);
+}
+
+.social-icons svg:nth-child(5) circle {
+    fill: var(--text-color);
+}
+
+.social-icons svg:nth-child(5) path {
+    fill: var(--secondary-bg);
+}
+
+.social-icons svg:hover path,
+.social-icons svg:hover circle {
+    fill: var(--accent-color);
+}
+
+.social-icons svg:nth-child(1):hover path {
+    fill: none;
+    stroke: var(--accent-color);
+}
+
+.social-icons svg:nth-child(5):hover circle {
+    fill: var(--accent-color);
+}
+
+.social-icons svg:nth-child(5):hover path {
+    fill: var(--secondary-bg);
+}

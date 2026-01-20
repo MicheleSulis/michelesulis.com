@@ -16,7 +16,7 @@ function initRotateText() {
     rotatingText[8] = "listening hip hop.";
     rotatingText[9] = "traveling.";
     rotatingText[10] = "for DIY.";
-    setInterval(rotateText, 350);
+    setInterval(rotateText, 2000);
 }
 
 function rotateText() {
@@ -27,4 +27,30 @@ function rotateText() {
     rotatingTextElement.innerHTML = rotatingText[ctr];
 }
 
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("moon-icon");
+
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+}
+
+function checkThemePreference() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+}
+
 window.onload = initRotateText;
+
+var oldOnLoad = window.onload;
+window.onload = function() {
+    if (oldOnLoad) oldOnLoad();
+    checkThemePreference();
+};

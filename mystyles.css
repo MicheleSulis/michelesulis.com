@@ -2,23 +2,27 @@
 dark theme:
 https://colorhunt.co/palette/1919192d4263c84b31ecdbba
 light theme:
-https://colorhunt.co/palette/cee5d0f3f0d7f7d59c5e454b
+found by trial and error
 */
 
 :root {
-    --bg-color: #F3F0D7;
-    --text-color: #5E454B;
-    --accent-color: #F7D59C;
-    --secondary-bg: #CEE5D0;
-    --line-color: #5E454B;
-}
-
-body.dark-mode {
     --bg-color: #191919;
     --text-color: #ECDBBA;
     --accent-color: #C84B31;
     --secondary-bg: #2D4263;
     --line-color: #C84B31;
+}
+
+body.light-mode {
+    --bg-color: #F8F9FA;
+    --text-color: #1F1F1F;
+    --accent-color: #C84B31;
+    --secondary-bg: #D3E3FD;
+    --line-color: #C84B31;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -34,7 +38,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
@@ -92,9 +96,18 @@ nav a:hover {
 
 .code-style {
     font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 4.5vw, 3.5rem);
     font-weight: bold;
     white-space: nowrap;
+}
+
+.header-with-line h2 {
+    margin: 0;
+    padding-right: 20px;
+    font-size: 2rem;
+    white-space: nowrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 .comment {
@@ -119,7 +132,8 @@ nav a:hover {
 }
 
 #about {
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 230px;
 }
 
 .header-with-line {
@@ -145,15 +159,60 @@ nav a:hover {
 .main-content {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 80px;
+    justify-content: space-between;
 }
 
 .portrait img {
     border-radius: 15px;
     box-shadow: 10px 10px 0px var(--accent-color);
-    max-width: 300px;
+    max-width: 350px;
     width: 100%;
     object-fit: cover;
+}
+
+.text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.text strong {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column-reverse;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .text {
+        max-width: 100%;
+    }
+
+    .portrait img {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .header-with-line {
+        justify-content: center;
+    }
+
+    #about {
+        padding: 50px 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -163,16 +222,11 @@ nav a:hover {
 }
 
 footer {
-    background-color: var(--secondary-bg);
     padding: 30px 0;
     text-align: center;
     margin-top: auto;
-}
-
-.social-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    background-color: var(--bg-color);
+    opacity: 0.6;
 }
 
 #theme-toggle {
@@ -186,27 +240,38 @@ footer {
 }
 
 .moon {
-    display: block;
+    display: none;
 }
 
 .sun {
-    display: none;
-}
-
-body.dark-mode .moon {
-    display: none;
-}
-
-body.dark-mode .sun {
     display: block;
 }
 
-.social-icons svg {
+body.light-mode .sun {
+    display: none;
+}
+
+body.light-mode .moon {
+    display: block;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons a {
     transition: transform 0.2s;
 }
 
-.social-icons svg:hover {
+.social-icons a:hover {
     transform: scale(1.1);
+}
+
+.social-icons svg {
+    width: 24px;
+    height: 24px;
 }
 
 .social-icons svg path,
@@ -214,33 +279,52 @@ body.dark-mode .sun {
     fill: var(--text-color);
 }
 
-.social-icons svg:nth-child(1) path {
-    fill: none;
-    stroke: var(--text-color);
+.social-icons a:nth-child(1) svg path {
+    fill: none !important;
+    stroke: var(--text-color) !important;
 }
 
-.social-icons svg:nth-child(5) circle {
-    fill: var(--text-color);
+.social-icons a:nth-child(5) svg circle {
+    fill: var(--text-color) !important;
 }
 
-.social-icons svg:nth-child(5) path {
-    fill: var(--secondary-bg);
+.social-icons a:nth-child(5) svg path {
+    fill: var(--secondary-bg) !important;
 }
 
-.social-icons svg:hover path,
-.social-icons svg:hover circle {
+.social-icons a:hover svg path,
+.social-icons a:hover svg circle {
+    fill: var(--accent-color) !important;
+}
+
+.social-icons a:nth-child(1):hover svg path {
+    fill: none !important;
+    stroke: var(--accent-color) !important;
+}
+
+.social-icons a:nth-child(5):hover svg circle {
     fill: var(--accent-color);
 }
 
-.social-icons svg:nth-child(1):hover path {
-    fill: none;
-    stroke: var(--accent-color);
+.social-icons a:nth-child(5):hover svg path {
+    fill: var(--secondary-bg) !important;
 }
 
-.social-icons svg:nth-child(5):hover circle {
+#theme-toggle:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+#theme-toggle:hover .sun circle {
     fill: var(--accent-color);
 }
 
-.social-icons svg:nth-child(5):hover path {
-    fill: var(--secondary-bg);
+#theme-toggle:hover .moon path {
+    fill: var(--accent-color);
+}
+
+.inline-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
 }

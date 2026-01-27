@@ -16,7 +16,7 @@ function initRotateText() {
     rotatingText[8] = "listening hip hop.";
     rotatingText[9] = "traveling.";
     rotatingText[10] = "for DIY.";
-    setInterval(rotateText, 2000);
+    setInterval(rotateText, 1500);
 }
 
 function rotateText() {
@@ -29,28 +29,53 @@ function rotateText() {
 
 function toggleTheme() {
     const body = document.body;
-    const icon = document.getElementById("moon-icon");
+    body.classList.toggle("light-mode");
 
-    body.classList.toggle("dark-mode");
-
-    if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
+    if (body.classList.contains("light-mode")) {
         localStorage.setItem("theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark");
     }
 }
 
 function checkThemePreference() {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
     }
+}
+
+function updateAge() {
+    const birthDate = new Date("2000-01-14");
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    const ageElement = document.getElementById("age");
+    if (ageElement) {
+        ageElement.textContent = age;
+    }
+}
+
+function fixStickyHover() {
+    const socialLinks = document.querySelectorAll('.social-icons a, #theme-toggle');
+
+    socialLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            this.blur();
+        });
+    });
 }
 
 window.onload = initRotateText;
 
 var oldOnLoad = window.onload;
-window.onload = function() {
+window.onload = function () {
     if (oldOnLoad) oldOnLoad();
     checkThemePreference();
+    updateAge();
 };

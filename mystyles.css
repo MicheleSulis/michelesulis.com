@@ -89,19 +89,16 @@ nav a:hover {
 
 
 .hero-section {
-    /* Occupa almeno tutto lo schermo, ma si allunga se serve */
     min-height: 100vh;
     height: auto;
 
     display: flex;
     flex-direction: column;
 
-    /* Centra tutto il blocco verticalmente */
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    /* Solo lo spazio essenziale per la nav e un po' sotto */
+    
     padding-top: 80px;
     padding-bottom: 60px;
     box-sizing: border-box;

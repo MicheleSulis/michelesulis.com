@@ -131,3 +131,53 @@ window.onload = function () {
     updateAge();
     loadAsciiArt();
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-container ul');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+    }
+
+    const aboutSection = document.getElementById('about');
+
+    if (aboutSection) {
+        const homeLink = document.querySelector('.nav-container ul li a[href="#"]');
+        const aboutLink = document.querySelector('.nav-container ul li a[href="#about"]');
+
+        const observerOptions = {
+            threshold: 0.4
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                if (homeLink) homeLink.classList.remove('active');
+                if (aboutLink) aboutLink.classList.add('active');
+            } else {
+                if (aboutLink) aboutLink.classList.remove('active');
+                if (homeLink) homeLink.classList.add('active');
+            }
+        }, observerOptions);
+
+        observer.observe(aboutSection);
+    }
+});

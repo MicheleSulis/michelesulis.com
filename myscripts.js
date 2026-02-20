@@ -180,4 +180,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(aboutSection);
     }
+
+    const accordionBtns = document.querySelectorAll('.year-toggle-btn');
+
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const section = this.parentElement;
+            const icon = this.querySelector('.toggle-icon');
+
+            section.classList.toggle('active');
+
+            if (section.classList.contains('active')) {
+                icon.textContent = '-';
+            } else {
+                icon.textContent = '+';
+            }
+        });
+    });
+
+    //Then remove it
+    const downloadLinks = document.querySelectorAll('.download-link');
+
+    if (downloadLinks.length > 0) {
+        const toast = document.createElement('div');
+        toast.className = 'custom-toast';
+        toast.innerHTML = `
+            <div class="toast-content">
+                <span class="toast-text">Not available yet, coming soon!</span>
+            </div>
+        `;
+        document.body.appendChild(toast);
+
+        downloadLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            });
+        });
+    }
 });

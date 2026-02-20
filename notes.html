@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michele Sulis</title>
+    <title>Michele Sulis - University Notes</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="mystyles.css">
     <script src="myscripts.js"></script>
@@ -117,7 +117,7 @@
             <div class="intro-content">
                 <h2 class="code-style">University Notes</h2>
                 <p>
-                    Here you will find notes from my Bachelor's and Master's degrees in Electronics Engineering.
+                    Here you will find notes from my Bachelor's degrees in Electronics Engineering.
                     These notes were taken by a student for students: they are not intended to replace
                     official courses, but to complement them. Some are typeset in LaTeX, others are
                     scanned from paper. Enjoy!
@@ -128,51 +128,380 @@
 
         <div class="notes-wrapper">
 
-            <section class="year-section">
-                <h3 class="year-title">> Bachelor's - First Year</h3>
+            <section class="year-section active">
+                <button class="year-toggle-btn">
+                    <span class="year-title">> Bachelor's - First Year</span>
+                    <span class="toggle-icon">-</span>
+                </button>
 
-                <div class="courses-list">
-                    <article class="course-item">
-                        <div class="course-header">
-                            <h4>Physics I</h4>
-                            <a href="#" class="download-link" title="Download PDF">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M9 13L12 16L15 13" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M19 19H5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                                <span>.pdf</span>
-                            </a>
-                        </div>
-                        <p class="course-desc">Mechanics and Thermodynamics. Handwritten notes with solved exercises.
-                        </p>
-                    </article>
+                <div class="accordion-content">
+                    <div class="courses-list">
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Geometry</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Linear algebra and analytic geometry. Handwritten notes.</p>
+                        </article>
 
-                    <article class="course-item">
-                        <div class="course-header">
-                            <h4>Calculus I</h4>
-                            <a href="#" class="download-link" title="Download PDF">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M9 13L12 16L15 13" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M19 19H5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                                <span>.pdf</span>
-                            </a>
-                        </div>
-                        <p class="course-desc">Limits, Derivatives and Integrals. LaTeX format.</p>
-                    </article>
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Mathematical Analysis I</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Limits, Derivatives and Integrals. Handwritten notes.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Elements of Computer Science</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Introduction to programming and C.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Physics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Mechanics and Thermodynamics. Handwritten notes.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Basics of Electromagnetism</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Maxwell's equations and electromagnetic waves.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Mathematical Analysis II</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Multivariable calculus and differential equations.</p>
+                        </article>
+
+                    </div>
                 </div>
             </section>
 
             <section class="year-section">
-                <h3 class="year-title">> Bachelor's - Second Year</h3>
+                <button class="year-toggle-btn">
+                    <span class="year-title">> Bachelor's - Second Year</span>
+                    <span class="toggle-icon">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <div class="courses-list">
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Signal Theory</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Continuous and discrete-time signals, Fourier transforms.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Modern Physics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Introduction to quantum mechanics, relativity, and atomic physics.
+                            </p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Fundamentals of Electronics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Diodes, BJTs, MOSFETs and operational amplifiers.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Electrotechnics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Circuit analysis and electrical fundamentals.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Electromagnetic Fields</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Transmission lines, waveguides and antennas.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Basics of Automatic Control</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">System modeling, feedback and stability.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Analogue Electronics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Advanced analog circuits design and analysis.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Telecommunications</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Analog and digital transmission systems.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="year-section">
+                <button class="year-toggle-btn">
+                    <span class="year-title">> Bachelor's - Third Year</span>
+                    <span class="toggle-icon">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <div class="courses-list">
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Digital Signal Processing</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Circuits and algorithms for DSP.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Digital Electronics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Logic design and digital circuits.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Object-Oriented Programming</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">OOP concepts in Java and data structures (trees, graphs, etc.).</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Industrial Electrotechnics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Electrical machines and power systems.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Measurements for Electronics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Instruments, sensors and error analysis.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Electronic Systems</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Microcontroller programming (PIC series) in Assembly language.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="year-section">
+                <button class="year-toggle-btn">
+                    <span class="year-title">> Master's - First Year</span>
+                    <span class="toggle-icon">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <div class="courses-list">
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Solid-State Physics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Fundamentals of crystal structures, semiconductors, and electronic
+                                properties.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Electronical Drafting EMC</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Electromagnetic compatibility principles and PCB design techniques.
+                            </p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Embedded Systems</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Design and programming of microcontroller-based embedded
+                                architectures.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Sensors and Transducers</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Physical principles, interfaces, and applications of modern sensors.
+                            </p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Devices for Micro and Nano Electronics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Physics and operation of advanced nanoscale semiconductor devices.
+                            </p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Cryptography and Blockchain</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Cryptographic algorithms, security protocols, and distributed ledger
+                                technologies.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="year-section">
+                <button class="year-toggle-btn">
+                    <span class="year-title">> Master's - Second Year</span>
+                    <span class="toggle-icon">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <div class="courses-list">
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Advanced Digital Communications</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Information theory, coding, and modern digital modulation schemes.
+                            </p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Radiomobile and Navigation Systems</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Wireless communication networks and satellite navigation
+                                architectures.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Micro and Nano Electronics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Advanced manufacturing processes and integrated circuit design.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Digital Adaptive Circuits and Learning Systems</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">Hardware implementations for machine learning and adaptive signal
+                                processing.</p>
+                        </article>
+
+                        <article class="course-item">
+                            <div class="course-header">
+                                <h4>Multiphysics Systems for Radiofrequency Electronics</h4>
+                                <a href="#" class="download-link" title="Download PDF">
+                                    <span>.pdf</span>
+                                </a>
+                            </div>
+                            <p class="course-desc">High-frequency circuit design and multiphysics simulations.</p>
+                        </article>
+                    </div>
+                </div>
             </section>
 
         </div>

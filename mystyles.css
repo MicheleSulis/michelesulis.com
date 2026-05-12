@@ -26,13 +26,13 @@ body.light-mode {
 html {
     scroll-behavior: smooth;
 }
-
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
     font-family: "Roboto", sans-serif;
     margin: 0;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -74,15 +74,12 @@ nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
+    margin-left: auto;
+    margin-right: 40px;
     align-items: center;
-    font-weight: 500;
 }
 
-nav ul li:first-child {
-    font-weight: 900;
-    font-size: 1.2rem;
-    margin-right: 15px;
-}
+
 
 nav a {
     text-decoration: none;
@@ -90,8 +87,9 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
+nav a.active {
     color: var(--accent-color);
+    font-weight: bold;
 }
 
 .hero-section {
@@ -136,11 +134,6 @@ nav a:hover {
     opacity: 0.25;
     transition: opacity 0.4s ease, box-shadow 0.4s ease;
     cursor: crosshair;
-}
-
-.ascii-art-content:hover {
-    opacity: 1;
-    box-shadow: 0 0 20px rgba(236, 219, 186, 0.2);
 }
 
 .ascii-label-top {
@@ -311,6 +304,11 @@ footer {
     align-items: center;
 }
 
+#theme-toggle .sun circle,
+#theme-toggle .moon path {
+    fill: var(--text-color) !important;
+}
+
 .moon {
     display: none;
 }
@@ -335,10 +333,9 @@ body.light-mode .moon {
 
 .social-icons a {
     transition: transform 0.2s;
-}
-
-.social-icons a:hover {
-    transform: scale(1.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-icons svg {
@@ -362,37 +359,6 @@ body.light-mode .moon {
 
 .social-icons a:nth-child(5) svg path {
     fill: var(--secondary-bg) !important;
-}
-
-.social-icons a:hover svg path,
-.social-icons a:hover svg circle {
-    fill: var(--accent-color) !important;
-}
-
-.social-icons a:nth-child(1):hover svg path {
-    fill: none !important;
-    stroke: var(--accent-color) !important;
-}
-
-.social-icons a:nth-child(5):hover svg circle {
-    fill: var(--accent-color);
-}
-
-.social-icons a:nth-child(5):hover svg path {
-    fill: var(--secondary-bg) !important;
-}
-
-#theme-toggle:hover {
-    transform: scale(1.1);
-    color: var(--accent-color);
-}
-
-#theme-toggle:hover .sun circle {
-    fill: var(--accent-color);
-}
-
-#theme-toggle:hover .moon path {
-    fill: var(--accent-color);
 }
 
 .inline-link {
@@ -449,11 +415,6 @@ body.light-mode .moon {
     flex-direction: column;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 0px var(--accent-color);
-}
-
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -474,10 +435,6 @@ body.light-mode .moon {
     transition: opacity 0.2s ease;
 }
 
-.card-header h3 a:hover {
-    opacity: 0.8;
-}
-
 .card-links a {
     color: var(--text-color);
     text-decoration: none;
@@ -489,10 +446,6 @@ body.light-mode .moon {
     width: 24px;
     height: 24px;
     transition: fill 0.2s;
-}
-
-.card-links a:hover {
-    color: var(--accent-color);
 }
 
 .card-line {
@@ -530,13 +483,6 @@ body.light-mode .project-card {
     border-color: #bbb;
 }
 
-body.light-mode .project-card:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-
-    border-color: var(--accent-color);
-    box-shadow: 5px 5px 0px var(--accent-color);
-}
-
 body.light-mode .card-header h3 {
     color: #222;
 }
@@ -551,10 +497,6 @@ body.light-mode .card-line {
 
 body.light-mode .card-links a {
     color: #333;
-}
-
-body.light-mode .card-links a:hover {
-    color: var(--accent-color);
 }
 
 /* --- NOTES PAGE --- */
@@ -591,16 +533,12 @@ body.light-mode .card-links a:hover {
     transition: all 0.2s ease;
 }
 
-.course-item:hover {
-    border-left-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.05);
-}
-
 .course-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+    gap: 15px;
 }
 
 .course-header h4 {
@@ -628,12 +566,6 @@ body.light-mode .card-links a:hover {
     height: 16px;
 }
 
-.download-link:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    background: rgba(200, 75, 49, 0.1);
-}
-
 .course-desc {
     margin: 0;
     font-size: 0.9rem;
@@ -645,11 +577,6 @@ body.light-mode .course-item {
     border-left: 3px solid #bbb;
 }
 
-body.light-mode .course-item:hover {
-    background: rgba(0, 0, 0, 0.1);
-    border-left-color: var(--accent-color);
-}
-
 body.light-mode .year-title {
     color: #333;
 }
@@ -659,15 +586,7 @@ body.light-mode .download-link {
     color: #333;
 }
 
-body.light-mode .download-link:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    background: rgba(200, 75, 49, 0.1);
-}
 
-.mobile-logo-container {
-    display: none;
-}
 
 /* MOBILE NAVBAR STYLE*/
 
@@ -722,12 +641,7 @@ body.light-mode .download-link:hover {
         left: 0;
     }
 
-    .nav-container ul li:first-child {
-        display: flex;
-        margin-right: 0;
-        width: 100%;
-        justify-content: center;
-    }
+    
 
     nav a.active {
         color: var(--accent-color);
@@ -758,14 +672,7 @@ body.light-mode .download-link:hover {
         object-fit: cover;
     }
 
-    .mobile-logo-container {
-        display: flex !important;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 0px;
-        margin-right: 0;
-
-    }
+    
 
     .mobile-logo {
         width: 64px;
@@ -786,12 +693,7 @@ body.light-mode .download-link:hover {
         min-height: 4em;
     }
 
-    nav ul li:nth-child(2) {
-        font-size: 1.2rem;
-        margin-bottom: 100px !important;
-        display: flex;
-        align-items: center;
-    }
+    
 
     .ascii-wrapper {
         /*to adjust at every new pic*/
@@ -827,10 +729,6 @@ body.light-mode .download-link:hover {
 
 body.light-mode .year-toggle-btn {
     border-bottom-color: #ccc;
-}
-
-.year-toggle-btn:hover {
-    opacity: 0.8;
 }
 
 .toggle-icon {
@@ -899,4 +797,241 @@ body.light-mode .custom-toast {
 .toast-text {
     font-size: 1rem;
     font-weight: bold;
+}
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.brand-text {
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.social-icons-wrapper {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .mobile-logo {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-color);
+    }
+    
+    .nav-brand {
+        gap: 10px;
+        margin-left: 0;
+    }
+    
+    .social-icons-wrapper {
+        margin-left: 0;
+        margin-top: 40px; /* Breathe space inside menu */
+    }
+    
+    .social-icons {
+        gap: 20px; /* Breathable space between icons */
+    }
+    
+    .social-icons svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+
+.ascii-art-content:hover {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(236, 219, 186, 0.2);
+}
+
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+
+.social-icons a:hover svg path,
+.social-icons a:hover svg circle {
+    fill: var(--accent-color) !important;
+}
+
+
+.social-icons a:nth-child(1):hover svg path {
+    fill: none !important;
+    stroke: var(--accent-color) !important;
+}
+
+
+.social-icons a:nth-child(5):hover svg circle {
+    fill: var(--accent-color);
+}
+
+
+.social-icons a:nth-child(5):hover svg path {
+    fill: var(--secondary-bg) !important;
+}
+
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+
+#theme-toggle .sun circle,
+#theme-toggle .moon path {
+    fill: var(--text-color) !important;
+}
+
+#theme-toggle:hover .sun circle,
+#theme-toggle:hover .moon path {
+    fill: var(--accent-color) !important;
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 0px var(--accent-color);
+}
+
+
+.card-header h3 a:hover {
+    opacity: 0.8;
+}
+
+
+.card-links a:hover {
+    color: var(--accent-color);
+}
+
+
+body.light-mode .project-card:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+
+    border-color: var(--accent-color);
+    box-shadow: 5px 5px 0px var(--accent-color);
+}
+
+
+body.light-mode .card-links a:hover {
+    color: var(--accent-color);
+}
+
+
+.course-item:hover {
+    border-left-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+.download-link:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: rgba(200, 75, 49, 0.1);
+}
+
+
+body.light-mode .course-item:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-left-color: var(--accent-color);
+}
+
+
+body.light-mode .download-link:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: rgba(200, 75, 49, 0.1);
+}
+
+
+.year-toggle-btn:hover {
+    opacity: 0.8;
+}
+}
+
+#footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-social-icons {
+    display: none;
+}
+
+.mobile-menu-logo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    
+    .mobile-menu-logo a {
+        padding: 0 !important;
+    }
+    
+    .mobile-logo-img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-color);
+    }
+    .desktop-only {
+        display: none !important;
+    }
+
+    nav ul {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mobile-social-icons {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: auto;
+        margin-bottom: 40px;
+    }
+
+    .mobile-social-icons .social-icons {
+        gap: 12px;
+    }
 }

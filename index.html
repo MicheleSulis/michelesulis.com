@@ -7,8 +7,6 @@
     <title>Michele Sulis</title>
     <link rel="stylesheet" href="mystyles.css">
     <script src="myscripts.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
 </head>
 
@@ -16,21 +14,117 @@
 
     <nav>
         <div class="container nav-container">
+            <a href="/" class="nav-brand">
+                <img src="./images/favicon.png" alt="Logo" class="mobile-logo">
+                <span class="brand-text">Michele Sulis</span>
+            </a>
             <ul>
-                <li class="mobile-logo-container">
-                    <img src="./images/favicon.png" alt="Logo" class="mobile-logo">
-                </li>
-                <li>Michele Sulis</li>
+                <li class="mobile-menu-logo"><a href="/"><img src="./images/favicon.png" alt="Logo" class="mobile-logo-img"></a></li>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="notes.html">University Notes</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="notes">University Notes</a></li>
+                
+                <li><a href="#footer">Contact</a></li>
+            
+                
             </ul>
-            <button class="hamburger" aria-label="Menu">
+            <div class="nav-right">
+                <button id="theme-toggle" onclick="toggleTheme()">
+                    <svg class="moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            </div>
+            
+            
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="code-style">
+                <span class="comment">/* Hello, I'm </span><br class="mobile-break">
+                <span id="greeting">Michele.</span>
+                <span class="comment"> */</span>
+            </h1>
+            <!--from https://www.text-image.com/convert/-->
+            <div class="ascii-wrapper">
+                <div class="ascii-label-top">
+                    // ASCII art of the week
+                </div>
+
+                <div id="ascii-art-container" class="ascii-art-content"></div>
+
+                <div class="ascii-label-bottom">
+                    &gt; Logo of the ISQM conference dedicated to quantum mechanics, held in Tokyo every three years.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <div class="header-with-line">
+                <h2>//about me</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="main-content">
+                <div class="text">
+                    <p>
+                        I'm a Master's student in Electronics Engineering at Università
+                        Politecnica delle Marche,
+                        <strong><a href="https://www.univpm.it" target="_blank" class="inline-link">UNIVPM</a></strong>.
+                        I'm <span id="age"></span> years old and I live in
+                        <strong><a href="https://it.wikipedia.org/wiki/Rosora" target="_blank"
+                                class="inline-link">Rosora</a></strong>,
+                        a hilltop village in the Marche region.
+                    </p>
+                    <p>
+                        I've accomplished some interesting projects which you can find in the <strong><a
+                                href="./projects" class="inline-link">Projects
+                                Section</a></strong>.
+                        I have also published my entire collection of university notes for free, in case you are a
+                        student
+                        looking for another point of view.
+                    </p>
+                    <p>
+                        I really enjoy sports, especially running and calisthenics.
+                        I also like hiking, DIY, and photography. Feel free to check my <strong><a
+                                href="https://500px.com/p/sulismichele00" target="_blank" class="inline-link">500px
+                            </a></strong> or
+                        <strong><a href="https://www.instagram.com/michele_sulis/" target="_blank"
+                                class="inline-link">Instagram</a></strong> page.
+                    </p>
+                </div>
+                <div class="portrait">
+                    <img src="./images/myPortrait.jpg" alt="Michele Sulis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
             <div class="social-icons">
                 <a href="mailto:contact@michelesulis.com" aria-label="Email">
                     <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,94 +184,9 @@
                         </g>
                     </svg>
                 </a>
-                <button id="theme-toggle" onclick="toggleTheme()">
-                    <svg class="moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <div class="hero-section">
-        <div class="container">
-            <h1 class="code-style">
-                <span class="comment">/* Hello, I'm </span><br class="mobile-break">
-                <span id="greeting">Michele.</span>
-                <span class="comment"> */</span>
-            </h1>
-            <!--from https://www.text-image.com/convert/-->
-            <div class="ascii-wrapper">
-                <div class="ascii-label-top">
-                    // ASCII art of the week
-                </div>
-
-                <div id="ascii-art-container" class="ascii-art-content"></div>
-
-                <div class="ascii-label-bottom">
-                    &gt; Logo of the ISQM conference dedicated to quantum mechanics, held in Tokyo every three years.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="about">
-        <div class="container">
-            <div class="header-with-line">
-                <h2>//about me</h2>
-                <div class="line"></div>
+                
             </div>
 
-            <div class="main-content">
-                <div class="text">
-                    <p>
-                        I'm a Master's student in Electronics Engineering at Università
-                        Politecnica delle Marche,
-                        <strong><a href="https://www.univpm.it" target="_blank" class="inline-link">UNIVPM</a></strong>.
-                        I'm <span id="age"></span> years old and I live in
-                        <strong><a href="https://it.wikipedia.org/wiki/Rosora" target="_blank"
-                                class="inline-link">Rosora</a></strong>,
-                        a hilltop village in the Marche region.
-                    </p>
-                    <p>
-                        I've accomplished some interesting projects which you can find in the <strong><a
-                                href="./projects.html" class="inline-link">Projects
-                                Section</a></strong>.
-                        I have also published my entire collection of university notes for free, in case you are a
-                        student
-                        looking for another point of view.
-                    </p>
-                    <p>
-                        I really enjoy sports, especially running and calisthenics.
-                        I also like hiking, DIY, and photography. Feel free to check my <strong><a
-                                href="https://500px.com/p/sulismichele00" target="_blank" class="inline-link">500px
-                            </a></strong> or
-                        <strong><a href="https://www.instagram.com/michele_sulis/" target="_blank"
-                                class="inline-link">Instagram</a></strong> page.
-                    </p>
-                </div>
-                <div class="portrait">
-                    <img src="./images/myPortrait.jpg" alt="Michele Sulis">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
             Copyright © 2026 Michele Sulis. All rights reserved.
         </div>
     </footer>

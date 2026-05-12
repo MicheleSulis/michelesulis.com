@@ -1035,3 +1035,8 @@ body.light-mode .download-link:hover {
         gap: 12px;
     }
 }
+
+/* Fix for Sticky Hover Bug */
+body.no-hover * {
+    pointer-events: none !important;
+}

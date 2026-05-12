@@ -4,6 +4,8 @@ var ctr = 0;
 
 function initRotateText() {
     rotatingTextElement = document.getElementById("greeting");
+    if (!rotatingTextElement) return; // Prevent errors on pages without this element
+    
     rotatingText[0] = "Michele.";
     rotatingText[1] = "an electronic engineer.";
     rotatingText[2] = "a calisthenic athlete.";
@@ -223,4 +225,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Fix for "Sticky hover" on SVG links after returning focus
+    window.addEventListener('blur', () => {
+        document.body.classList.add('no-hover');
+    });
+    window.addEventListener('focus', () => {
+        document.body.classList.add('no-hover');
+        window.addEventListener('mousemove', () => {
+            document.body.classList.remove('no-hover');
+        }, { once: true });
+    });
 });

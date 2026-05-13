@@ -231,9 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('no-hover');
     });
     window.addEventListener('focus', () => {
-        document.body.classList.add('no-hover');
-        window.addEventListener('mousemove', () => {
-            document.body.classList.remove('no-hover');
-        }, { once: true });
+        setTimeout(() => {
+            window.addEventListener('mousemove', () => {
+                document.body.classList.remove('no-hover');
+            }, { once: true });
+        }, 100); // ~100ms è sufficiente
     });
 });

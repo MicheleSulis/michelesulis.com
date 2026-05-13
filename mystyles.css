@@ -1039,4 +1039,36 @@ body.light-mode .download-link:hover {
 /* Fix for Sticky Hover Bug */
 body.no-hover * {
     pointer-events: none !important;
+    transition: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.no-hover .project-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  body.no-hover .social-icons a:hover {
+    transform: none !important;
+  }
+  body.no-hover .social-icons a:hover svg path,
+  body.no-hover .social-icons a:hover svg circle {
+    fill: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+  }
+  body.no-hover .download-link:hover {
+    border-color: #555 !important;
+    color: var(--text-color) !important;
+    background: none !important;
+  }
+  body.no-hover .course-item:hover {
+    border-left-color: #444 !important;
+    background: rgba(255,255,255,0.02) !important;
+  }
+  body.no-hover #theme-toggle:hover {
+    transform: none !important;
+    color: var(--text-color) !important;
+  }
+  body.no-hover .card-links a:hover {
+    color: var(--text-color) !important;
+  }
 }

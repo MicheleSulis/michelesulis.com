@@ -136,6 +136,20 @@ nav a.active {
     cursor: crosshair;
 }
 
+/* Aumenta l'opacità base su touch device */
+@media (hover: none) {
+    .ascii-art-content {
+        opacity: 0.4;
+        transition: opacity 0.4s ease, box-shadow 0.4s ease;
+    }
+}
+
+/* Classe aggiunta via JS al tap */
+.ascii-art-content.tapped {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(236, 219, 186, 0.2);
+}
+
 .ascii-label-top {
     margin-bottom: 15px;
     color: var(--accent-color);

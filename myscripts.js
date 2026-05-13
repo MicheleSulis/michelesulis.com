@@ -237,4 +237,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, { once: true });
         }, 100); // ~100ms è sufficiente
     });
+
+    // Effetto tap ASCII art su mobile
+    const asciiContent = document.querySelector('.ascii-art-content');
+    if (asciiContent) {
+        asciiContent.addEventListener('touchstart', () => {
+            asciiContent.classList.add('tapped');
+            setTimeout(() => {
+                asciiContent.classList.remove('tapped');
+            }, 1200); // rimane illuminata per 1.2s poi torna
+        }, { passive: true });
+    }
 });

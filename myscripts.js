@@ -214,15 +214,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(toast);
 
         downloadLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                toast.classList.add('show');
-
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3000);
-            });
+            if (link.getAttribute('href') === '#') {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                });
+            }
         });
     }
 

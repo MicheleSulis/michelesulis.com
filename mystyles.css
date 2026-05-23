@@ -164,7 +164,7 @@ nav a.active {
 
 .ascii-art-content pre {
     margin: 0;
-    font-size: 6px !important;
+    font-size: min(1.1vw, 6px) !important;
     line-height: 1.0;
     font-family: 'Courier New', monospace;
     font-weight: 700;

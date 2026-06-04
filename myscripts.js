@@ -68,6 +68,13 @@ function loadAsciiArt() {
 
     if (typeof asciiArtContent !== 'undefined') {
         container.innerHTML = asciiArtContent;
+        
+        // Centra l'ASCII art su mobile se va in overflow
+        setTimeout(() => {
+            if (container.scrollWidth > container.clientWidth) {
+                container.scrollLeft = (container.scrollWidth - container.clientWidth) / 2;
+            }
+        }, 100);
     } else {
         console.error("asciiArtContent is not defined. Make sure ascii_art.js is loaded.");
     }
@@ -189,11 +196,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Effetto tap ASCII art su mobile
     const asciiContent = document.querySelector('.ascii-art-content');
     if (asciiContent) {
+        let touchTimeout;
         asciiContent.addEventListener('touchstart', () => {
+            clearTimeout(touchTimeout);
             asciiContent.classList.add('tapped');
-            setTimeout(() => {
-                asciiContent.classList.remove('tapped');
-            }, 1200); // rimane illuminata per 1.2s poi torna
         }, { passive: true });
+
+        const handleTouchEnd = () => {
+            clearTimeout(touchTimeout);
+            touchTimeout = setTimeout(() => {
+                asciiContent.classList.remove('tapped');
+            }, 1200); // rimane illuminata per 1.2s dopo il rilascio
+        };
+
+        asciiContent.addEventListener('touchend', handleTouchEnd, { passive: true });
+        asciiContent.addEventListener('touchcancel', handleTouchEnd, { passive: true });
     }
 });
